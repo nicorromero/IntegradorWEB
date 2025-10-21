@@ -23,7 +23,7 @@ function ContenedorDestacado(p){
     <div class="body">
       <h3>${p.nombre}</h3>
       <p class="precio">$ ${p.precio.toLocaleString("es-AR")}</p>
-      <a class="btn-detalle" href="./pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.nombre}">
+      <a class="btn-detalle" href="pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.nombre}">
         Ver detalles
       </a>
     </div>

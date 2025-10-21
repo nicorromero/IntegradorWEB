@@ -57,7 +57,7 @@ function renderizarCarrito(productosFiltrados) {
       <div class="carrito-vacio">
         <h3>Tu carrito está vacío</h3>
         <p>¡Agrega algunos productos para comenzar a comprar!</p>
-        <a href="../index.html" class="btn-seguir-comprando">Seguir Comprando</a>
+        <a href="/IntegradorWEB/index.html" class="btn-seguir-comprando">Seguir Comprando</a>
       </div>
     `;
     return;
