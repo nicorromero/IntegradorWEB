@@ -1,34 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/img/styles.css/styles.css">
-    <title>Contacto</title>
-    <meta name="description" content="Página de contacto de StoreShop.">
-</head>
-<body>
-  <div class="container">
-        <header>
-              <nav class="nav">
-                <h1>StoreShop</h1>
-                <ul>
-                    <li><a href="/index.html">Volver al inicio</a></li>
-                </ul>
-              </nav>  
-        </header>
-     <div class="contacto">
-        <ul>
-          <li>Telefono</li>
-          <li>Reclamos</li>
-          <li>Nuestros datos</li>
-          <li>Terminos y Condiciones</li>
-          <li>Politica cookies</li>
-        </ul>
-     </div>   
-  </div>  
+    <title>Contacto - Mi Sitio</title>
+    <link rel="apple-touch-icon"  href="/apple-touch-icon">
+    <link rel="icon" type="image/png" href="assets/img/img/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="./assets/img/styles.css/styles.css">
+   
     
-        
+
+
+
+</head>
+
+<body>
+    <!-- Navbar con botón Volver al Inicio -->
+    <nav class="navbar navbar-dark bg-black">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">StoreShop</span>
+            <a href="/index.html" class="btn btn-outline-light btn-sm">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Título -->
+                <h2 class="text-center mb-4">Formulario de Contacto</h2>
+                
+                <!-- Formulario Simple -->
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <!-- Campo Nombre -->
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            
+                            <!-- Campo Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <!-- Campo Mensaje -->
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Consulta</label>
+                                <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                            </div>
+                            
+                            <!-- Botón Enviar -->
+                            <button type="submit" class="btn btn-dark w-100">Enviar Consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Footer Simple -->
+    <footer class="bg-light py-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">StoreShop - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

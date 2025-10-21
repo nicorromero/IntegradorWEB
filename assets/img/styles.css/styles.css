@@ -537,7 +537,7 @@ img{
 }
 
 
-/* Sección de Contacto */
+ /*Sección de Contacto */
 .contacto {
     background: white;
     margin: 2rem auto;
@@ -583,7 +583,8 @@ img{
     border-left-color: #6c757d;
 }
 
-/* Responsive */
+
+ 
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
