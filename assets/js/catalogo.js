@@ -24,35 +24,7 @@ function renderizarProductos(productosFiltrados) {
   productosFiltrados.forEach(p => cont.appendChild(crearTarjetaProducto(p)));
 }
 
-/*function initCatalogo() {
-  const cont = document.getElementById("catalogo");
-  if (!cont) return;
-  cont.innerHTML ="";
-  // Renderizar todos los productos inicialmente
-  renderizarProductos(productos);
 
-  // Crear filtros por categoría
-  const categorias = [...new Set(productos.map(p => p.categoria))];
-  const filtroCont = document.createElement("div");
-  filtroCont.className = "filtros";
-  filtroCont.innerHTML = `
-    <h3>Filtrar por categoría:</h3>
-    <button data-categoria="todos">Todos</button>
-    ${categorias.map(cat => `<button data-categoria="${cat}">${cat.charAt(0).toUpperCase() + cat.slice(1)}</button>`).join("")}
-  `;
-  cont.prepend(filtroCont);
-
-  // Manejar clics en los botones de filtro
-  filtroCont.addEventListener("click", (e) => {
-    if (e.target.tagName === "BUTTON") {
-      const categoria = e.target.dataset.categoria;
-      const productosFiltrados = categoria === "todos" 
-        ? productos 
-        : productos.filter(p => p.categoria === categoria);
-      renderizarProductos(productosFiltrados);
-    }
-  });
-}*/
 function initCatalogo() {
   const cont = document.getElementById("catalogo");
   if (!cont) return;
