@@ -19,7 +19,7 @@ function crearTarjetaCarrito(p) {
       <p class="producto-subtotal">Subtotal: $${(p.precio * p.cantidad).toLocaleString("es-AR")}</p>
     </div>
     <button class="btn-eliminar" onclick="eliminarDelCarrito(${p.id})">
-      🗑️ Eliminar
+        Eliminar
     </button>
   `;
   return art;
@@ -38,7 +38,7 @@ function mostrarResumenCarrito(carrito) {
       </div>
       <div class="acciones-carrito">
         <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
-        <button class="btn-comprar" onclick="finalizarCompra()">Finalizar Compra</button>
+        <a href="formulario.html" class="btn-comprar" id="btn-comprar">Finalizar Compra</a>
       </div>
     </div>
   `;
@@ -132,23 +132,6 @@ window.vaciarCarrito = function() {
   }
 }
 
-window.finalizarCompra = function() {
-  const carrito = obtenerCarrito();
-  
-  if (carrito.length === 0) {
-    alert('Tu carrito está vacío');
-    return;
-  }
-  
-  const total = carrito.reduce((sum, producto) => sum + (producto.precio * producto.cantidad), 0);
-  
-  if (confirm(`¿Confirmar compra por $${total.toLocaleString("es-AR")}?`)) {
-    alert('¡Compra realizada con éxito! Gracias por tu compra.');
-    guardarCarrito([]);
-    actualizarBadgeCarrito();
-    initCarrito();
-  }
-}
 
 export function initCarrito() {
   const cont = document.getElementById("carrito");
@@ -163,4 +146,8 @@ document.addEventListener("DOMContentLoaded", initCarrito);
 
 
 
-    
+
+
+
+
+
