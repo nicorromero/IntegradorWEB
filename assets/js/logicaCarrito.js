@@ -132,6 +132,7 @@ window.vaciarCarrito = function() {
   }
 }
 
+
 window.finalizarCompra = function() {
   const carrito = obtenerCarrito();
   

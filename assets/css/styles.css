@@ -11,11 +11,14 @@
 }
 
 
+
 h1{
     color: blanchedalmond;
     display: flex;
     justify-content: center;
     background-color: black;
+    font-family: 'times new roman', times, serif;
+    font-size: 32px;
 }
 
 
@@ -29,6 +32,7 @@ h1{
     justify-content: space-between;
     padding: 2rem;
 }
+
 .nav {
     background:black;
     padding: 10px;
@@ -188,13 +192,15 @@ img{
 
 .detalle {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  gap: 30px;
   margin: 30px auto;
   max-width: 900px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 12px;
   background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .detalle img {
@@ -202,7 +208,10 @@ img{
   height: 350px;
   object-fit: cover;
   border-radius: 10px;
+    flex-shrink: 0;
 }
+
+
 
 .detalle .info {
   flex: 1;
@@ -221,6 +230,42 @@ img{
 .detalle button:disabled {
   background-color: gray;
   cursor: not-allowed;
+}
+
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE ===== */
+
+/* Tablets (768px y menos) */
+@media screen and (max-width: 768px) {
+  .detalle {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 15px;
+    margin: 20px;
+  }
+  
+  .detalle img {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .detalle .info {
+    text-align: center;
+  }
+  
+  .detalle .info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .detalle .precio {
+    font-size: 1.3rem;
+  }
+  
+  .detalle .controles {
+    justify-content: center;
+  }
 }
 
 
@@ -546,74 +591,7 @@ img{
 }
 
 
- /*Sección de Contacto */
-.contacto {
-    background: white;
-    margin: 2rem auto;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    max-width: 800px;
-}
 
-.contacto ul {
-    list-style: none;
-}
-
-.contacto li {
-    padding: 1.5rem;
-    margin: 1rem 0;
-    background: #f8f9fa;
-    border-left: 4px solid #667eea;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.contacto li:hover {
-    transform: translateX(10px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    background: #e9ecef;
-}
-
-.contacto li:nth-child(2) {
-    border-left-color: #28a745;
-}
-
-.contacto li:nth-child(3) {
-    border-left-color: #ffc107;
-}
-
-.contacto li:nth-child(4) {
-    border-left-color: #dc3545;
-}
-
-.contacto li:nth-child(5) {
-    border-left-color: #6c757d;
-}
-
-
- 
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .nav ul {
-        gap: 1rem;
-    }
-    
-    .contacto {
-        padding: 1.5rem;
-        margin: 1rem;
-    }
-    
-    .contacto li:hover {
-        transform: translateX(5px);
-    }
-}
 
 
 /*nav frache */
@@ -721,3 +699,11 @@ img{
 
 
 }
+.nav_logo {
+    background-color: black;
+}
+
+
+    /*Sección de Contacto prueba */
+
+    
