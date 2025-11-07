@@ -19,7 +19,7 @@ function crearTarjetaCarrito(p) {
       <p class="producto-subtotal">Subtotal: $${(p.precio * p.cantidad).toLocaleString("es-AR")}</p>
     </div>
     <button class="btn-eliminar" onclick="eliminarDelCarrito(${p.id})">
-      🗑️ Eliminar
+        Eliminar
     </button>
   `;
   return art;
@@ -38,7 +38,7 @@ function mostrarResumenCarrito(carrito) {
       </div>
       <div class="acciones-carrito">
         <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
-        <button class="btn-comprar" onclick="finalizarCompra()">Finalizar Compra</button>
+        <a href="formulario.html" class="btn-comprar" id="btn-comprar">Finalizar Compra</a>
       </div>
     </div>
   `;
@@ -164,4 +164,8 @@ document.addEventListener("DOMContentLoaded", initCarrito);
 
 
 
-    
+
+
+
+
+
