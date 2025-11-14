@@ -1,7 +1,7 @@
 
-import { productos } from "./data.js";
+import productos  from "./data.js";
 import { obtenerStock, guardarStock, actualizarBadgeCarrito } from "./util.js";
-import { agregarAlCarrito } from "./carrito.js"; // 👈 usamos la función centralizada
+import { agregarAlCarrito } from "./carrito.js"; // importar función de carrito.js
 
 function getParametroId() {
   const params = new URLSearchParams(window.location.search);
@@ -14,12 +14,12 @@ function renderDetalle(p) {
 
   cont.innerHTML = `
     <div class="detalle">
-      <img src="${p.img}" alt="${p.nombre}">
+      <img src="${p.image}" alt="${p.title}">
       <div class="info">
-        <h2>${p.nombre}</h2>
-        <p>${p.descripcion}</p>
-        <p><strong>Categoría:</strong> ${p.categoria}</p>
-        <p><strong>Precio:</strong> $${p.precio.toLocaleString("es-AR")}</p>
+        <h2>${p.title}</h2>
+        <p>${p.description}</p>
+        <p><strong>Categoría:</strong> ${p.category}</p>
+        <p><strong>Precio:</strong> $${p.price.toLocaleString("es-AR")}</p>
         <p><strong>Stock:</strong> ${p.stock}</p>
         <button id="btnCarrito" ${p.stock === 0 ? "disabled" : ""}>
           ${p.stock > 0 ? "Agregar al carrito" : "Sin stock"}
@@ -53,10 +53,21 @@ function initDetalle() {
   const id = getParametroId();
   const producto = productos.find(p => p.id === id);
 
+  if (!producto) {
+    document.getElementById("detalleProducto").innerHTML = `<p>Producto no encontrado.</p>`;
+    return; // Salimos si no hay producto
+  } 
+
   // Usar stock guardado en localStorage si existe
   const stock = obtenerStock();
-  if (producto && stock[producto.id] !== undefined) {
+  if (stock[producto.id] !== undefined) {
+    // 1. Usar stock guardado en localStorage si existe
     producto.stock = stock[producto.id];
+  } else {
+    // 2. Si no existe, es la primera vez que vemos este producto.
+    // Asignamos un stock inicial por defecto (ej: 10)
+    // (La API también nos da 'producto.rating.count', ¡podrías usar eso!)
+    producto.stock = 10; 
   }
 
   if (producto) {
@@ -68,5 +79,5 @@ function initDetalle() {
   actualizarBadgeCarrito(); // refrescar contador al entrar
 }
 
-document.addEventListener("DOMContentLoaded", initDetalle);
+initDetalle()
 

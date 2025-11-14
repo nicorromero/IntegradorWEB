@@ -1,15 +1,15 @@
-import { productos } from "./data.js";
+import productos from "./data.js";
 
 
-function crearTarjetaProducto(p) {
+function crearTarjetaProducto(p) { // "p" sigue siendo el objeto producto
   const art = document.createElement("div");
   art.className = "producto";
   art.innerHTML = `
-    <img src="${p.img}" alt="${p.nombre}">
+    <img src="${p.image}" alt="${p.title}">
     <div class="body">
-      <h3>${p.nombre}</h3>
-      <p class="precio">$ ${p.precio.toLocaleString("es-AR")}</p>
-      <a class="btn-detalle" href="/IntegradorWEB/pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.nombre}">
+      <h3>${p.title}</h3>
+      <p class="precio">$ ${p.price.toLocaleString("es-AR")}</p>
+      <a class="btn-detalle" href="/IntegradorWEB/pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.title}">
         Ver detalles
       </a>
     </div>
@@ -35,7 +35,7 @@ function initCatalogo() {
   filtroCont.innerHTML = `
     <h3>Filtrar por categoría:</h3>
     <button data-categoria="todos" class="filtro-activo">Todos</button>
-    ${[...new Set(productos.map(p => p.categoria))].map(cat => `
+    ${[...new Set(productos.map(p => p.category))].map(cat => `
       <button data-categoria="${cat}">${cat.charAt(0).toUpperCase() + cat.slice(1)}</button>
     `).join("")}
   `;
@@ -55,7 +55,7 @@ function initCatalogo() {
       const categoria = e.target.dataset.categoria;
       const productosFiltrados = categoria === "todos" 
         ? productos 
-        : productos.filter(p => p.categoria === categoria);
+        : productos.filter(p => p.category === categoria);
       renderizarProductos(productosFiltrados);
     }
   });
@@ -63,7 +63,5 @@ function initCatalogo() {
 
 
 
-
-document.addEventListener("DOMContentLoaded", initCatalogo)
-
+initCatalogo();
 

@@ -6,7 +6,7 @@ function crearTarjetaCarrito(p) {
   art.innerHTML = `
     <img src="${p.img}" alt="${p.nombre}" class="producto-imagen">
     <div class="producto-info">
-      <h3>${p.nombre}</h3>
+      <h3>${p.title}</h3>
       <p class="producto-precio">$${p.precio.toLocaleString("es-AR")}</p>
       <div class="producto-cantidad">
         <span>Cantidad: ${p.cantidad}</span>
@@ -16,7 +16,7 @@ function crearTarjetaCarrito(p) {
           <button class="btn-cantidad" onclick="aumentarCantidad(${p.id})">+</button>
         </div>
       </div>
-      <p class="producto-subtotal">Subtotal: $${(p.precio * p.cantidad).toLocaleString("es-AR")}</p>
+      <p class="producto-subtotal"> Subtotal: $${(p.precio * p.cantidad).toLocaleString("es-AR")}</p>
     </div>
     <button class="btn-eliminar" onclick="eliminarDelCarrito(${p.id})">
         Eliminar
