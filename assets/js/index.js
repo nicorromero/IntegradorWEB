@@ -47,7 +47,7 @@ function initIndex() {
   console.log("Paso 2: Se encontró el contenedor #producto.", cont);
   cont.innerHTML = "";
 
-  const destacados = tomarAleatorios(productos, 3);
+  const destacados = tomarAleatorios(productos, 4);
   
   console.log("Paso 3: Se generaron los productos destacados:", destacados);
   

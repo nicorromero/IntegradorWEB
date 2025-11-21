@@ -18,7 +18,7 @@ function OcultarMensaje() {
     if (modalGracias) {
         modalGracias.style.display = 'none';
     } 
-    window.location.href = "/IntegradorWEB/index.html"; 
+    window.location.href = "/index.html"; 
 }
 
 if (btnSeguirComprando) {

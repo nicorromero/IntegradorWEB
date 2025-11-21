@@ -9,7 +9,7 @@ function crearTarjetaProducto(p) { // "p" sigue siendo el objeto producto
     <div class="body">
       <h3>${p.title}</h3>
       <p class="precio">$ ${p.price.toLocaleString("es-AR")}</p>
-      <a class="btn-detalle" href="/IntegradorWEB/pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.title}">
+      <a class="btn-detalle" href="/pages/producto.html?id=${p.id}" aria-label="Ver detalles de ${p.title}">
         Ver detalles
       </a>
     </div>

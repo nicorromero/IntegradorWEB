@@ -10,7 +10,7 @@ export function ensureCartButton() {
   let link = nav.querySelector(".cart-link");
   if (!link) {
     link = document.createElement("a");
-    link.href = "/IntegradorWEB/pages/carrito.html";
+    link.href = "/pages/carrito.html";
     link.className = "cart-link";
     link.setAttribute("aria-label", "Carrito");
     link.innerHTML = `
